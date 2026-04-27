@@ -1,5 +1,8 @@
 # Agile Artifacts Index
 
+## Guides
+- `agentic-sprint-workflow.md`
+
 ## 00-governance
 - `naming-conventions.md`
 - `artifact-lifecycle.md`
