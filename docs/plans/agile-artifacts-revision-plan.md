@@ -6,10 +6,11 @@ Create PM-grade Agile artifacts for a frontend-only Next.js boilerplate and clos
 ## Scope and Constraints
 - Product scope: Next.js frontend boilerplate only (no backend implementation).
 - Design system baseline: shadcn/ui + Tailwind CSS v4.
-- Delivery model: 3 releases across 6 sprints.
+- Current baseline delivery model: 3 releases across 6 sprints.
+- Structural rule: the workspace must remain open-ended for additional `release-XX` and `sprint-YY` records.
 
 ## Working Assumption
-- **Planning anchor:** Inception artifacts are refined first, but checklist must align all downstream Iteration/Release artifacts to the 3-release roadmap.
+- **Planning anchor:** Inception artifacts are refined first, but checklist must align all downstream Iteration/Release artifacts to the current baseline roadmap without hard-limiting future release or sprint additions.
 
 ## Target Release and Sprint Roadmap (Alignment Baseline)
 - **Release 1: The Foundation of Landing Pages**
@@ -96,7 +97,7 @@ Create PM-grade Agile artifacts for a frontend-only Next.js boilerplate and clos
 
 ## Planned Deliverables for This Revision
 - Updated Inception artifacts with expanded/refined user stories and acceptance criteria.
-- Sprint-aware Iteration and Release artifacts aligned to the 3-release/6-sprint plan.
+- Sprint-aware Iteration and Release artifacts aligned to the current 3-release/6-sprint baseline.
 - Updated artifact index and initialized artifact registry.
 - Recommendations embedded for sustainable file organization and ongoing artifact governance.
 

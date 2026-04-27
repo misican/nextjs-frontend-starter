@@ -11,6 +11,12 @@
 - State: `Draft | In Review | Approved`
 - Last Reviewed: `YYYY-MM-DD`
 
+## Status Notes
+- Use `Draft` while shaping the sprint record.
+- Use `In Review` when links, sprint deltas, and evidence references are ready for review.
+- Use `Approved` when the sprint record is the accepted current delivery reference.
+- After closure, archive the record according to lifecycle rules.
+
 ## 1) Sprint Goal
 - Goal statement:
 - Business outcome:
@@ -81,14 +87,14 @@ Reference canonical sources and capture sprint-specific deltas only.
 - Breaking changes:
 
 ## 9) Evidence Index
-Use relative links to evidence files.
+Add direct evidence links here. Create a local attachment folder only when sprint-specific files must live beside this record.
 
 | Evidence Type | Link | Notes |
 |---|---|---|
-| Test reports |  |  |
-| Demo/preview |  |  |
-| CI pipeline run |  |  |
-| Metrics dashboard |  |  |
+| Test reports |  | Use `test-report-YYYY-MM-DD.md` if stored locally |
+| Demo/preview |  | Use `demo-notes-YYYY-MM-DD.md` if stored locally |
+| CI pipeline run |  | Use `ci-run-YYYY-MM-DD.md` if stored locally |
+| Metrics dashboard |  | Use `metrics-snapshot-YYYY-MM-DD.md` if stored locally |
 
 ## 10) Sign-Off
 | Role | Name | Decision (Approve/Conditional/Reject) | Date | Notes |

@@ -4,6 +4,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"agile:check": "node scripts/check-agile-artifacts.mjs",
+		"agile:scaffold": "node scripts/scaffold-agile-delivery-records.mjs",
 		"build": "next build",
 		"check": "biome check .",
 		"check:unsafe": "biome check --write --unsafe .",

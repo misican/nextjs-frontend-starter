@@ -18,6 +18,7 @@
 
 ### release
 - `release-artifacts.template.md`
+- `release-pack.template.md`
 
 ### maintenance
 - `maintenance-artifacts.template.md`
@@ -57,6 +58,25 @@
 - `retirement-strategy.md`
 - `migration-runbook.md`
 - `decommission-checklist-and-communications.md`
+
+## 03-delivery-records
+### release-01
+- `release-pack.md`
+- `sprint-01.md`
+- `sprint-02.md`
+
+### release-02
+- `release-pack.md`
+- `sprint-03.md`
+- `sprint-04.md`
+
+### release-03
+- `release-pack.md`
+- `sprint-05.md`
+- `sprint-06.md`
+
+### archive
+- `archive.md`
 
 ## Tracking
 - `artifact-registry.md`
