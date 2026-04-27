@@ -1,5 +1,10 @@
 # QA Strategy and Test Plan
 
+## Metadata
+- Owner: QA Lead
+- State: Draft
+- Last Reviewed: 2026-04-28
+
 ## Scope
 Covers release-readiness validation for roadmap deliverables across US-101 through US-119.
 
@@ -20,6 +25,15 @@ Covers release-readiness validation for roadmap deliverables across US-101 throu
 | Accessibility | Detect WCAG violations in core flows | Axe + Storybook a11y | Stories and pages available |
 | Visual Regression | Catch UI drift and theme regressions | Storybook Visual Tests | Baseline snapshots approved |
 | Performance | Enforce mobile performance budgets | Lighthouse CI | Production-like build generated |
+
+## NFR Acceptance Gates
+| NFR Area | Metric | Target | Gate Type |
+|---|---|---|---|
+| Performance | Lighthouse (mobile) | >= 90 | Required |
+| Performance | LCP (p75 mobile) | <= 2,500 ms | Required |
+| Accessibility | Critical WCAG violations | 0 in key flows | Required |
+| Reliability | Release-blocking defects | 0 open Critical defects | Required |
+| Security | Critical dependency/secret findings | 0 | Required |
 
 ## Coverage Matrix
 | Story ID | Coverage Type | Minimum Evidence |

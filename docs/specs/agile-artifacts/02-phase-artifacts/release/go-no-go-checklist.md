@@ -1,5 +1,9 @@
 # Go/No-Go Checklist
 
+## Metadata
+- Owner: QA Lead
+- Last Reviewed: 2026-04-28
+
 ## Release Candidate
 - Version: 
 - Decision Meeting Date: 

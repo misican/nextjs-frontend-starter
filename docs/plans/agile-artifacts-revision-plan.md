@@ -29,6 +29,9 @@ Create PM-grade Agile artifacts for a frontend-only Next.js boilerplate and clos
 - Inception acceptance criteria are now defined in Given/When/Then format across the backlog.
 - Frontend-only scope and shadcn/ui standards are explicitly represented in Inception artifacts.
 - Sprint-level planning now maps stories to Release 1-3 and Sprint 1-6 outcomes.
+- Release-level scope, sprint allocations, and story-volume targets are represented in iteration/release artifacts.
+- Traceability now includes Epic → Story → Acceptance Criteria → Test Case coverage.
+- NFR targets and acceptance gates are explicitly documented in release QA artifacts.
 
 ## Revision Checklist
 
@@ -59,11 +62,11 @@ Create PM-grade Agile artifacts for a frontend-only Next.js boilerplate and clos
   - [x] `go-no-go-checklist.md`
 
 ### 4) Roadmap-to-Artifact Alignment
-- [ ] Add release-level scope tables for Release 1, Release 2, and Release 3.
-- [ ] Add sprint-level story allocations for Sprints 1-6.
-- [ ] Set target story volume per sprint: minimum 3 INVEST-ready user stories per sprint (target range: 3-5).
-- [ ] Ensure each sprint has measurable sprint success criteria and explicit deliverables.
-- [ ] Add cross-check that no sprint includes backend scope.
+- [x] Add release-level scope tables for Release 1, Release 2, and Release 3.
+- [x] Add sprint-level story allocations for Sprints 1-6.
+- [x] Set target story volume per sprint: minimum 3 INVEST-ready user stories per sprint (target range: 3-5).
+- [x] Ensure each sprint has measurable sprint success criteria and explicit deliverables.
+- [x] Add cross-check that no sprint includes backend scope.
 
 #### Story Volume Guidance
 - Minimum commitment: 3 user stories per sprint.
@@ -81,9 +84,9 @@ Create PM-grade Agile artifacts for a frontend-only Next.js boilerplate and clos
 | Sprint 6 | Release 3 | 3 | 0 | No | Documentation and usage guidance |
 
 ### 5) Quality and Traceability Controls
-- [ ] Add traceability mapping: Epic → User Story → Acceptance Criteria → Test Case.
-- [ ] Add measurable NFR targets (performance, accessibility, reliability, security) and acceptance gates.
-- [ ] Ensure each artifact has owner, state, and review date metadata.
+- [x] Add traceability mapping: Epic → User Story → Acceptance Criteria → Test Case.
+- [x] Add measurable NFR targets (performance, accessibility, reliability, security) and acceptance gates.
+- [x] Ensure each artifact has owner, state, and review date metadata.
 
 ### 6) Final Consistency Pass
 - [ ] Validate naming conventions and lifecycle state usage.

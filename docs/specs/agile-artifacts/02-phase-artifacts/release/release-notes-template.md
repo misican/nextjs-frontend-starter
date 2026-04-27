@@ -1,5 +1,10 @@
 # Release Notes Template
 
+## Metadata
+- Owner: Product Owner
+- State: Draft
+- Last Reviewed: 2026-04-28
+
 ## Release Metadata
 - Version:
 - Release Date:

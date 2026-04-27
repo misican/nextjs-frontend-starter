@@ -1,5 +1,10 @@
 # Test Cases
 
+## Metadata
+- Owner: QA Lead
+- State: Draft
+- Last Reviewed: 2026-04-28
+
 ## Traceability Matrix (Epic → Story → Test Case)
 | Epic ID | Story ID | Test Case IDs |
 |---|---|---|
@@ -9,6 +14,29 @@
 | EPIC-004 | US-108, US-109, US-111, US-112 | TC-008, TC-009, TC-011, TC-012 |
 | EPIC-005 | US-102, US-103, US-114, US-115, US-117, US-118, US-119 | TC-002, TC-003, TC-014, TC-015, TC-017, TC-018, TC-019 |
 | EPIC-007 | US-116 | TC-016 |
+
+## End-to-End Traceability (Epic → Story → Acceptance Criteria → Test Case)
+| Epic ID | Story ID | Acceptance Criteria Reference | Test Case IDs |
+|---|---|---|---|
+| EPIC-001 | US-101 | AC-1, AC-2 | TC-001 |
+| EPIC-005 | US-102 | AC-1, AC-2 | TC-002 |
+| EPIC-005 | US-103 | AC-1, AC-2 | TC-003 |
+| EPIC-002 | US-104 | AC-1, AC-2 | TC-004 |
+| EPIC-002 | US-105 | AC-1, AC-2 | TC-005 |
+| EPIC-001 | US-106 | AC-1, AC-2 | TC-006 |
+| EPIC-002 | US-107 | AC-1, AC-2 | TC-007 |
+| EPIC-004 | US-108 | AC-1, AC-2 | TC-008 |
+| EPIC-004 | US-109 | AC-1, AC-2 | TC-009 |
+| EPIC-003 | US-110 | AC-1, AC-2 | TC-010 |
+| EPIC-004 | US-111 | AC-1, AC-2 | TC-011 |
+| EPIC-004 | US-112 | AC-1, AC-2 | TC-012 |
+| EPIC-003 | US-113 | AC-1, AC-2 | TC-013 |
+| EPIC-005 | US-114 | AC-1, AC-2 | TC-014 |
+| EPIC-005 | US-115 | AC-1, AC-2 | TC-015 |
+| EPIC-007 | US-116 | AC-1, AC-2 | TC-016 |
+| EPIC-005 | US-117 | AC-1, AC-2 | TC-017 |
+| EPIC-005 | US-118 | AC-1, AC-2 | TC-018 |
+| EPIC-005 | US-119 | AC-1, AC-2 | TC-019 |
 
 ## Refined Test Cases
 
@@ -189,21 +217,3 @@
 - **Expected Result:** Release documentation package is ready for approval flow.
 - **Type:** Release Readiness
 - **Owner:** PO + QA
-
-### TC-008 — shadcn/ui-First Composition Rule (US-105)
-- **Precondition:** Pull request with new reusable component exists.
-- **Steps:**
-  1. Review component composition.
-  2. Verify existing shadcn/ui primitives are used before custom markup.
-- **Expected Result:** Components conform to shadcn/ui-first policy or include approved ADR exception.
-- **Type:** Code Review Gate
-- **Owner:** FE Lead
-
-### TC-009 — Semantic Token Styling Compliance (US-105)
-- **Precondition:** New/updated UI component styles are in branch.
-- **Steps:**
-  1. Inspect applied classes and theme usage.
-  2. Check for hard-coded color primitives and non-semantic overrides.
-- **Expected Result:** Semantic tokens used; no hard-coded color drift.
-- **Type:** Design System Compliance
-- **Owner:** FE Lead
