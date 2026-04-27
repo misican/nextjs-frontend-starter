@@ -1,7 +1,12 @@
 import "~/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Figtree, Oxanium } from "next/font/google";
+import { cn } from "~/lib/utils";
+
+const oxaniumHeading = Oxanium({subsets:['latin'],variable:'--font-heading'});
+
+const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
 	title: "Create T3 App",
@@ -18,7 +23,7 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html className={`${geist.variable}`} lang="en">
+		<html className={cn(geist.variable, "font-sans", figtree.variable, oxaniumHeading.variable)} lang="en">
 			<body>{children}</body>
 		</html>
 	);
