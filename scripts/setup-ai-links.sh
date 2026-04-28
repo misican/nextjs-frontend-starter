@@ -6,7 +6,8 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SOURCE="$REPO_ROOT/.ai/skills"
+SOURCE_ABS="$REPO_ROOT/.ai/skills"
+SOURCE_REL="../.ai/skills"
 
 # Parallel arrays: link paths and their targets
 LINK_RELS=(".github/skills" ".cursor/skills")
@@ -21,7 +22,6 @@ warn()    { printf "${YELLOW}!${NC} %s\n" "$1"; }
 error()   { printf "${RED}✗${NC} %s\n" "$1"; }
 
 for LINK_REL in "${LINK_RELS[@]}"; do
-  TARGET="$SOURCE"
   LINK="$REPO_ROOT/$LINK_REL"
   PARENT="$(dirname "$LINK")"
 
@@ -29,7 +29,7 @@ for LINK_REL in "${LINK_RELS[@]}"; do
 
   if [ -L "$LINK" ]; then
     CURRENT="$(readlink "$LINK")"
-    if [ "$CURRENT" = "$TARGET" ]; then
+    if [ "$CURRENT" = "$SOURCE_REL" ]; then
       success "$LINK_REL → already correct"
       continue
     else
@@ -41,6 +41,6 @@ for LINK_REL in "${LINK_RELS[@]}"; do
     continue
   fi
 
-  ln -s "$TARGET" "$LINK"
-  success "$LINK_REL → $TARGET"
+  ln -s "$SOURCE_REL" "$LINK"
+  success "$LINK_REL → $SOURCE_REL"
 done

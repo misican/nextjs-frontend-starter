@@ -92,11 +92,11 @@ Behavior:
 ```json
 {
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  "chat.instructionsFilesLocations": [".github/instructions"],
-  "chat.agentFilesLocations": [".github/agents"],
-  "chat.promptFilesLocations": [".github/prompts"],
-  "chat.agentSkillsLocations": [".github/skills"],
-  "chat.hookFilesLocations": [".github/hooks"]
+  "chat.instructionsFilesLocations": { ".github/instructions": true },
+  "chat.agentFilesLocations": { ".github/agents": true },
+  "chat.promptFilesLocations": { ".github/prompts": true },
+  "chat.agentSkillsLocations": { ".ai/skills": true, ".github/skills": true },
+  "chat.hookFilesLocations": { ".github/hooks": true }
 }
 ```
 
