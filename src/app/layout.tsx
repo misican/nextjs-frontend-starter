@@ -1,12 +1,15 @@
 import "~/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Figtree, Oxanium } from "next/font/google";
+import { Figtree, Geist, Oxanium } from "next/font/google";
 import { cn } from "~/lib/utils";
 
-const oxaniumHeading = Oxanium({subsets:['latin'],variable:'--font-heading'});
+const oxaniumHeading = Oxanium({
+	subsets: ["latin"],
+	variable: "--font-heading",
+});
 
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
 	title: "Create T3 App",
@@ -23,7 +26,15 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html className={cn(geist.variable, "font-sans", figtree.variable, oxaniumHeading.variable)} lang="en">
+		<html
+			className={cn(
+				geist.variable,
+				"font-sans",
+				figtree.variable,
+				oxaniumHeading.variable,
+			)}
+			lang="en"
+		>
 			<body>{children}</body>
 		</html>
 	);
