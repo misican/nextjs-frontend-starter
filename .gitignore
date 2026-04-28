@@ -44,3 +44,6 @@ yarn-error.log*
 
 # idea files
 .idea
+# Generated AI IDE links — source of truth is .ai/skills/
+.github/skills
+.cursor/skills

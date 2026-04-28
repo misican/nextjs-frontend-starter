@@ -1,0 +1,11 @@
+{
+	"hooks": {
+		"PostToolUse": [
+			{
+				"type": "command",
+				"command": "node .ai/scripts/ai-post-edit-check.mjs",
+				"timeout": 90
+			}
+		]
+	}
+}

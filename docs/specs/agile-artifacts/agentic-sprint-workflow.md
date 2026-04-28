@@ -34,6 +34,8 @@ These external references were used as guardrails to validate that the workflow 
    - Used for: beginner onboarding path for team members new to AI-assisted development.
 - DORA State of AI-assisted Software Development (Google Cloud): https://cloud.google.com/devops/state-of-devops
    - Used for: framing AI adoption as a systems/process capability problem, not just a tooling decision.
+- VS Code Context Engineering Guide: https://code.visualstudio.com/docs/copilot/guides/context-engineering-guide
+   - Used for: plan-first implementation flow, curated project context, context isolation by task type, and iterative refinement patterns.
 
 ### Cross-Check Result
 
@@ -41,6 +43,7 @@ These external references were used as guardrails to validate that the workflow 
 - No direct copy-paste quotations from external sources are included in this guide.
 - External references were used to validate process quality and consistency, not to override project-specific governance in `docs/specs/agile-artifacts`.
 - Practical additions from external sources are integrated below as workflow upgrades, prompts, and metrics.
+- Context-engineering-specific upgrades are integrated in section 13.
 
 ---
 
@@ -287,6 +290,105 @@ Start in this order:
 3. Scrum Guide refresher: sprint events and artifact commitments
 4. Martin Fowler CI article: frequent integration and feedback-loop discipline
 5. SPACE framework article: define balanced productivity metrics
+
+---
+
+## 12) Turn sprint learnings into Copilot customizations
+
+Use each sprint as input for improving your AI setup.
+
+### When to create a rule vs prompt vs skill vs hook
+
+- Create an **always-on instruction** when you corrected the same project convention 2-3 times.
+- Create a **file-based instruction** when the rule only applies to certain files (for example `docs/**`, `src/app/**`, or Storybook files).
+- Create a **prompt file** when you repeat the same one-shot workflow across sprints.
+- Create a **skill** only after a workflow is stable, multi-step, and used repeatedly.
+- Create a **hook** when the behavior must happen deterministically and should not depend on the model remembering.
+
+### Good candidates from this project
+
+- Sprint-pack updates and evidence syncing -> prompt first, skill later
+- Agile artifact validation -> hook
+- shadcn/ui + semantic-token UI conventions -> instructions
+- Story implementation runbook -> prompt first, skill later
+- Release go/no-go evidence checks -> prompt first, skill later
+
+### Example prompts for creating customizations from real sprint pain
+
+> Review the last sprint-related changes and repeated corrections in this repo. Propose:
+> 1) one repo-wide instruction,
+> 2) two file-based instructions,
+> 3) one reusable prompt file,
+> 4) one hook.
+> Keep suggestions specific to this project and explain why each belongs in that customization type.
+
+> Turn this repeated sprint-close workflow into a reusable prompt file. It should update the sprint pack, verify missing evidence, and prepare closure notes without inventing data.
+
+> Extract a new instruction from this conversation: the rule should apply to `docs/specs/agile-artifacts/**/*.md` and should prevent invented evidence, inconsistent lifecycle states, and copied canonical text in sprint records.
+
+> Based on our current stack and docs, propose which repeated implementation workflow is mature enough to stay a prompt file and which one is mature enough to become a skill. Use conservative recommendations.
+
+> Propose a safe hook for this repository that runs only when Agile artifact files change, executes the smallest useful validation command, and avoids unnecessary noise.
+
+---
+
+## 13) Context engineering alignment (VS Code)
+
+This section aligns the sprint workflow with the VS Code context engineering flow: **curate context -> plan -> implement**.
+
+### 13.1 Curate project-wide context before sprint execution
+
+Use your existing artifacts as the primary context pack instead of re-explaining them every chat.
+
+- Product/Scope context: `02-phase-artifacts/inception/user-stories-and-acceptance-criteria.md`
+- Architecture context: `02-phase-artifacts/inception/technical-blueprint.md`
+- Quality and acceptance context: `02-phase-artifacts/iteration/definition-of-done.md` + `02-phase-artifacts/release/qa-strategy-and-test-plan.md`
+- Delivery instance context: `03-delivery-records/release-XX/sprint-YY.md`
+
+If these files conflict or are stale, fix them first. Stale context produces low-quality AI output.
+
+### 13.2 Plan first, then implement from plan
+
+For non-trivial stories, create a plan artifact first (for example `sprint-YY-plan.md`) before coding.
+
+Recommended plan sections:
+- goal and scope
+- architecture/design notes
+- task checklist
+- risks/open questions
+- validation plan (what checks and evidence are required)
+
+### 13.3 Keep context isolated by activity
+
+- Use one chat/session for planning.
+- Use a separate chat/session for implementation.
+- Use another session for review/QA comparison against the plan.
+
+This reduces context mixing and prevents plan details from being lost in long implementation chats.
+
+### 13.4 Use iterative feedback loops
+
+- Ask clarification questions before finalizing plans.
+- Implement in small slices and validate after each slice.
+- If drift appears, update plan + sprint record immediately.
+- Convert repeated corrections into instructions/prompts/hooks (section 12).
+
+### 13.5 Context-engineering anti-patterns to avoid
+
+- Context dumping (too much unfocused context in one prompt)
+- One-shot full-feature implementation without plan checkpoint
+- Mixing planning, coding, and release-signoff in one long chat
+- Not versioning changes to context docs and customization files
+
+### 13.6 Example prompts (context-engineering style)
+
+> Build a concise sprint context pack from canonical docs and the current sprint file. Return only: scope boundaries, architectural constraints, quality gates, and top 5 delivery risks.
+
+> Create `sprint-01-plan.md` using this structure: goal, architecture/design, task checklist, open questions, and validation/evidence plan. Ask me 3 clarification questions before finalizing.
+
+> Implement only the first unchecked task in `sprint-01-plan.md`. After implementation, run relevant checks and update both `sprint-01-plan.md` progress and `sprint-01.md` evidence sections.
+
+> Review current code changes against `sprint-01-plan.md` and report: completed tasks, deviations, missing tests/evidence, and proposed corrections.
 
 ---
 

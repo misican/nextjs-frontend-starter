@@ -1,0 +1,8 @@
+{
+	"github.copilot.chat.codeGeneration.useInstructionFiles": true,
+	"chat.instructionsFilesLocations": [".github/instructions"],
+	"chat.agentFilesLocations": [".github/agents"],
+	"chat.promptFilesLocations": [".github/prompts"],
+	"chat.agentSkillsLocations": [".github/skills"],
+	"chat.hookFilesLocations": [".github/hooks"]
+}

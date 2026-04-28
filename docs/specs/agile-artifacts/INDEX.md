@@ -2,6 +2,8 @@
 
 ## Guides
 - `agentic-sprint-workflow.md`
+- `ai-customization-guide.md`
+- `copilot-customization-guide.md`
 
 ## 00-governance
 - `naming-conventions.md`
