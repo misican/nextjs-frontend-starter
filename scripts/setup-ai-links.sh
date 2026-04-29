@@ -1,16 +1,26 @@
 #!/usr/bin/env bash
 # scripts/setup-ai-links.sh
-# Creates IDE-specific symlinks pointing to .ai/skills/ as the canonical source.
+# Creates IDE-specific symlinks pointing to .ai/ as the canonical source.
+# Handles both directory and file symlinks.
 # Compatible with bash 3.2+ (macOS default). Safe to run multiple times (idempotent).
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SOURCE_ABS="$REPO_ROOT/.ai/skills"
-SOURCE_REL="../.ai/skills"
 
-# Parallel arrays: link paths and their targets
-LINK_RELS=(".github/skills" ".cursor/skills")
+# Format: "LINK_REL|TARGET_REL"
+# TARGET_REL is relative to the link's parent directory.
+LINKS=(
+  ".github/copilot-instructions.md|../.ai/copilot-instructions.md"
+  ".github/agents|../.ai/agents"
+  ".github/prompts|../.ai/prompts"
+  ".github/hooks|../.ai/hooks"
+  ".github/instructions|../.ai/instructions"
+  ".github/skills|../.ai/skills"
+  ".cursor/skills|../.ai/skills"
+  ".cursor/agents|../.ai/agents"
+  ".cursor/prompts|../.ai/prompts"
+)
 
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -21,7 +31,9 @@ success() { printf "${GREEN}✓${NC} %s\n" "$1"; }
 warn()    { printf "${YELLOW}!${NC} %s\n" "$1"; }
 error()   { printf "${RED}✗${NC} %s\n" "$1"; }
 
-for LINK_REL in "${LINK_RELS[@]}"; do
+for ENTRY in "${LINKS[@]}"; do
+  LINK_REL="${ENTRY%%|*}"
+  SOURCE_REL="${ENTRY##*|}"
   LINK="$REPO_ROOT/$LINK_REL"
   PARENT="$(dirname "$LINK")"
 

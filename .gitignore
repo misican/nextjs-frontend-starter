@@ -39,6 +39,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Generated AI IDE discovery links (created by pnpm ai:setup / prepare)
+.github/copilot-instructions.md
+.github/agents
+.github/prompts
+.github/hooks
+.github/instructions
+.github/skills
+.cursor/skills
+.cursor/agents
+.cursor/prompts
+
 # typescript
 *.tsbuildinfo
 
