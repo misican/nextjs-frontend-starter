@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Button } from "~/components/ui/button";
+
 export default function HomePage() {
 	return (
 		<main className="min-h-screen overflow-x-clip bg-slate-950 text-slate-100">
@@ -67,6 +69,9 @@ export default function HomePage() {
 						architecture docs to start delivering your first user story.
 					</p>
 					<div className="mt-8 flex flex-col gap-3 sm:flex-row">
+						<Button asChild className="sm:w-auto" size="lg">
+							<Link href="/onboarding">Try the onboarding flow</Link>
+						</Button>
 						<Link
 							className="inline-flex w-full items-center justify-center rounded-xl bg-sky-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-sky-300 focus-visible:outline-2 focus-visible:outline-sky-300 focus-visible:outline-offset-2 sm:w-auto"
 							href="https://nextjs.org/docs/app/getting-started/installation"

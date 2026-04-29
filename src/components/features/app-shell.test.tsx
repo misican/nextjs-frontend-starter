@@ -27,6 +27,9 @@ describe("App shell features", () => {
 			within(footerNav).getByRole("link", { name: /home/i }),
 		).toHaveAttribute("href", "/");
 		expect(
+			within(footerNav).getByRole("link", { name: /onboarding/i }),
+		).toHaveAttribute("href", "/onboarding");
+		expect(
 			within(footerNav).getByRole("link", { name: /docs/i }),
 		).toHaveAttribute("href", "/docs");
 		expect(
@@ -39,6 +42,9 @@ describe("App shell features", () => {
 
 		expect(
 			screen.getAllByRole("link", { name: /home/i }).length,
+		).toBeGreaterThan(0);
+		expect(
+			screen.getAllByRole("link", { name: /onboarding/i }).length,
 		).toBeGreaterThan(0);
 		expect(
 			screen.getAllByRole("link", { name: /docs/i }).length,

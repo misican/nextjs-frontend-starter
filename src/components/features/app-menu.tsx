@@ -24,6 +24,10 @@ const navItems = [
 		label: "Home",
 	},
 	{
+		href: "/onboarding",
+		label: "Onboarding",
+	},
+	{
 		href: "/docs",
 		label: "Docs",
 	},

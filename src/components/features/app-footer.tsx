@@ -20,6 +20,14 @@ export function AppFooter() {
 						<li>
 							<Link
 								className="text-muted-foreground hover:text-foreground"
+								href="/onboarding"
+							>
+								Onboarding
+							</Link>
+						</li>
+						<li>
+							<Link
+								className="text-muted-foreground hover:text-foreground"
 								href="/docs"
 							>
 								Docs

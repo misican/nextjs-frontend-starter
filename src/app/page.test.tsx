@@ -23,6 +23,9 @@ describe("HomePage", () => {
 		expect(screen.getByText(/team scalability/i)).toBeInTheDocument();
 
 		expect(
+			screen.getByRole("link", { name: /try the onboarding flow/i }),
+		).toHaveAttribute("href", "/onboarding");
+		expect(
 			screen.getByRole("link", { name: /get started locally/i }),
 		).toHaveAttribute(
 			"href",
