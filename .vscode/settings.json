@@ -1,18 +1,18 @@
 {
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  "chat.instructionsFilesLocations": {
-    ".ai/instructions": true
-  },
-  "chat.agentFilesLocations": {
-    ".ai/agents": true
-  },
-  "chat.promptFilesLocations": {
-    ".ai/prompts": true
-  },
-  "chat.agentSkillsLocations": {
-    ".ai/skills": true
-  },
-  "chat.hookFilesLocations": {
-    ".ai/hooks": true
-  }
+	"github.copilot.chat.codeGeneration.useInstructionFiles": true,
+	"chat.instructionsFilesLocations": {
+		".ai/instructions": true
+	},
+	"chat.agentFilesLocations": {
+		".ai/agents": true
+	},
+	"chat.promptFilesLocations": {
+		".ai/prompts": true
+	},
+	"chat.agentSkillsLocations": {
+		".ai/skills": true
+	},
+	"chat.hookFilesLocations": {
+		".ai/hooks": true
+	}
 }

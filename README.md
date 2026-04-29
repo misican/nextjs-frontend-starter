@@ -1,29 +1,107 @@
-# Create T3 App
+# Next.js Frontend Starter
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Production-ready frontend starter built on Next.js App Router with TypeScript, Tailwind CSS v4, and shadcn/ui-first composition patterns.
 
-## What's next? How do I make an app with this?
+This repository is intentionally frontend-focused. Backend services are out of scope unless explicitly added.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Stack
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui primitives first
+- Biome for lint/format checks
+- Vitest, Playwright, and Storybook-ready workflow standards
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Quick Start
 
-## Learn More
+### Prerequisites
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Node.js 20+
+- pnpm 10+
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Install
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+```bash
+pnpm install
+```
 
-## How do I deploy this?
+### Start development server
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+```bash
+pnpm dev
+```
+
+Open http://localhost:3000.
+
+## Core Scripts
+
+| Script | Purpose |
+|---|---|
+| `pnpm dev` | Start Next.js dev server (Turbo mode) |
+| `pnpm build` | Build production bundle |
+| `pnpm start` | Start production server |
+| `pnpm preview` | Build then run production server |
+| `pnpm typecheck` | Run TypeScript type checking |
+| `pnpm check` | Run Biome checks |
+| `pnpm check:write` | Apply safe Biome fixes |
+| `pnpm check:unsafe` | Apply all Biome fixes including unsafe |
+| `pnpm agile:check` | Validate agile artifact consistency |
+| `pnpm agile:scaffold` | Scaffold agile delivery records |
+| `pnpm ai:setup` | Refresh AI discovery symlinks |
+| `pnpm ai:verify` | Validate AI customization setup |
+| `pnpm ai:lint-metadata` | Lint AI customization metadata |
+
+## Frontend Structure Baseline
+
+The project follows a standardized App Router-oriented structure under `src/`.
+
+| Path | Purpose |
+|---|---|
+| `src/app` | Routes, layouts, loading and error boundaries |
+| `src/components/ui` | Reusable UI primitives |
+| `src/components/features` | Feature or domain-level components |
+| `src/lib` | Shared utilities and client helpers |
+| `src/hooks` | Reusable React hooks |
+| `src/styles` | Global styles and design tokens |
+
+### App Router Route Conventions
+
+- Create routable pages under `src/app/<segment>/page.tsx`.
+- Keep shared segment layout in `src/app/<segment>/layout.tsx` when needed.
+- Add optional segment boundaries such as `loading.tsx`, `error.tsx`, and `not-found.tsx`.
+- Keep API handlers in `src/app/api/<segment>/route.ts` (or nested segment variants).
+
+## Agile Artifact System
+
+Agile SDLC artifacts are maintained in a canonical layered model:
+
+- Canonical phase artifacts: `docs/specs/agile-artifacts/02-phase-artifacts`
+- Delivery records and deltas: `docs/specs/agile-artifacts/03-delivery-records`
+
+When adding, moving, superseding, or archiving delivery records, keep the index and registry synchronized:
+
+- `docs/specs/agile-artifacts/INDEX.md`
+- `docs/specs/agile-artifacts/artifact-registry.md`
+
+## AI Workflow Customization
+
+AI customizations are canonical in `.ai/`.
+
+- Always-on instructions: `.ai/copilot-instructions.md`
+- Prompt workflows: `.ai/prompts/`
+- Agents: `.ai/agents/`
+- Skills: `.ai/skills/`
+- Hooks: `.ai/hooks/`
+
+IDE discovery paths in `.github/` and `.cursor/` are generated links. Regenerate them with `pnpm ai:setup`.
+
+## Documentation Entry Points
+
+- AI first-run scripts: `docs/guides/ai-first-run-scripts-guide.md`
+- AI customization guide: `docs/guides/ai-customization-guide.md`
+- Agile artifacts root: `docs/specs/agile-artifacts/README.md`
+
+## Deployment
+
+Default deployment target is Vercel with preview deployments per pull request and regular production releases.
