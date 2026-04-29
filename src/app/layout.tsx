@@ -2,6 +2,8 @@ import "~/styles/globals.css";
 
 import type { Metadata } from "next";
 import { Figtree, Geist, Oxanium } from "next/font/google";
+import { AppFooter } from "~/components/features/app-footer";
+import { AppHeader } from "~/components/features/app-header";
 import { cn } from "~/lib/utils";
 
 const oxaniumHeading = Oxanium({
@@ -35,7 +37,13 @@ export default function RootLayout({
 			)}
 			lang="en"
 		>
-			<body>{children}</body>
+			<body className="bg-background text-foreground">
+				<div className="flex min-h-screen flex-col">
+					<AppHeader />
+					<div className="flex-1">{children}</div>
+					<AppFooter />
+				</div>
+			</body>
 		</html>
 	);
 }
