@@ -17,6 +17,8 @@
 		"prepare": "pnpm ai:setup",
 		"preview": "next build && next start",
 		"start": "next start",
+		"test": "vitest --run",
+		"test:watch": "vitest",
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
@@ -36,13 +38,20 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.5",
+		"@rolldown/binding-darwin-arm64": "1.0.0-rc.17",
 		"@tailwindcss/postcss": "^4.0.15",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
 		"@types/node": "^20.14.10",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
+		"@vitejs/plugin-react": "^6.0.1",
+		"happy-dom": "^20.9.0",
+		"jsdom": "^29.1.0",
 		"postcss": "^8.5.3",
 		"tailwindcss": "^4.0.15",
-		"typescript": "^5.8.2"
+		"typescript": "^5.8.2",
+		"vitest": "^4.1.5"
 	},
 	"ct3aMetadata": {
 		"initVersion": "7.40.0"
