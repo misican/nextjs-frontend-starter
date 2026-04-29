@@ -16,6 +16,17 @@ import { extname } from "node:path";
 const SOURCE_EXTS = new Set([".ts", ".tsx", ".js", ".mjs", ".cjs", ".json"]);
 const AGILE_PATH_PREFIX = "docs/specs/agile-artifacts";
 
+/** @param {string} filePath */
+function isAgileArtifactPath(filePath) {
+	const normalized = filePath.replaceAll("\\", "/");
+	return (
+		normalized === AGILE_PATH_PREFIX ||
+		normalized.startsWith(`${AGILE_PATH_PREFIX}/`) ||
+		normalized.includes(`/${AGILE_PATH_PREFIX}/`) ||
+		normalized.endsWith(`/${AGILE_PATH_PREFIX}`)
+	);
+}
+
 /** @param {string} cmd */
 function run(cmd) {
 	try {
@@ -31,7 +42,7 @@ function check(files) {
 	const sourceFiles = files.filter(
 		(f) => SOURCE_EXTS.has(extname(f)) && existsSync(f),
 	);
-	const hasAgileDoc = files.some((f) => f.includes(AGILE_PATH_PREFIX));
+	const hasAgileDoc = files.some(isAgileArtifactPath);
 
 	if (sourceFiles.length > 0) {
 		run(`pnpm exec biome check ${sourceFiles.map((f) => `"${f}"`).join(" ")}`);

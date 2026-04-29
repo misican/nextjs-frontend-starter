@@ -7,6 +7,8 @@
 		"agile:check": "node scripts/check-agile-artifacts.mjs",
 		"agile:scaffold": "node scripts/scaffold-agile-delivery-records.mjs",
 		"ai:setup": "node -e \"const p=process.platform,{execSync}=require('child_process');if(p==='win32'){execSync('powershell -ExecutionPolicy Bypass -File scripts/setup-ai-links.ps1',{stdio:'inherit'})}else{execSync('bash scripts/setup-ai-links.sh',{stdio:'inherit'})}\"",
+		"ai:verify": "node .ai/scripts/ai-verify.mjs",
+		"ai:lint-metadata": "node .ai/scripts/ai-lint-metadata.mjs",
 		"build": "next build",
 		"check": "biome check .",
 		"check:unsafe": "biome check --write --unsafe .",

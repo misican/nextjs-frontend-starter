@@ -2,10 +2,10 @@
 
 Use this repository's AI customizations as the source of truth:
 
-- Always-on project guidance: `.github/copilot-instructions.md`
-- File-scoped guidance: `.github/instructions/*.instructions.md`
-- Reusable workflows: `.github/prompts/*.prompt.md`
-- Custom personas: `.github/agents/*.agent.md`
+- Always-on project guidance: `.ai/copilot-instructions.md` (discovery link: `.github/copilot-instructions.md`)
+- File-scoped guidance: `.ai/instructions/*.instructions.md` (discovery link: `.github/instructions/`)
+- Reusable workflows: `.ai/prompts/*.prompt.md` (discovery link: `.github/prompts/`)
+- Custom personas: `.ai/agents/*.agent.md` (discovery link: `.github/agents/`)
 - Skills: `.ai/skills/*/SKILL.md` (canonical); IDE links at `.github/skills/` and `.cursor/skills/`
 
 ## Repo Context

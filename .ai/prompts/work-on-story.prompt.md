@@ -17,4 +17,4 @@ Run this workflow:
 4. On approval, generate an incremental implementation plan and persist plan artifacts under `docs/plans/ai-workflows/`.
 5. On `Red`, stop and provide a resolution checklist only.
 
-Use project conventions from `.github/copilot-instructions.md` and relevant file-scoped instructions.
+Use project conventions from `.ai/copilot-instructions.md` and relevant file-scoped instructions.
